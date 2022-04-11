@@ -39,8 +39,51 @@ console.group("circulo");
 const radioCirculo = 4;
 const diametroCirculo = radioCirculo*2;
 
-const pi = 3.1415;
 
-pi = Math.PI;
+
+const pi = Math.PI;
+
+const perimetroCirculo = (diametro)=>{
+    return diametro*pi;
+}
+
+const areaCirculo = (radio)=>{
+    return (radio*radio)*pi;
+}
+
+
+console.log('Perimetro del circulo es: ' + perimetroCirculo(diametroCirculo));
+console.log('Area del ciculo es: ' + areaCirculo(radioCirculo))
 
 console.groupEnd();
+
+
+//funciones de interaccion
+
+const calcularPerimetroCuadrado=()=>{
+    const input = document.getElementById("userLadoCuadrado");
+    const value = input.value;
+    const perimetro=calcPerimetroCuadrado(value);
+    alert("El perimetro del cuadrado es "  +perimetro);
+}
+
+const calcularAreaCuadrado=()=>{
+    const input = document.getElementById("userLadoCuadrado");
+    const value = input.value;
+    const area=calcAreaCuadrado(value);
+    alert("El area del cuadrado es "  +area);
+}
+
+const calcularAltura=()=>{
+ calcularAlturaIsoceles(document.getElementById("ladotriangulo1").value,document.getElementById("ladotriangulo2").value,document.getElementById("basetriangulo").value)
+}
+const calcularAlturaIsoceles=(lado1,lado2,base)=>{
+    if(lado1!==lado2){
+        alert('No es un triangulo isoceles')
+    }else{
+        
+        let altura= Math.sqrt((lado1**2)-(base**2)/4);
+        
+        alert('La altura del triangulo es: '+ altura);
+    }
+}
